@@ -1,0 +1,46 @@
+{
+  "name": "vite-plugin-template",
+  "version": "0.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.js",
+  "scripts": {
+    "dev": "npm run build -- --watch",
+    "build": "tsup src/index.ts --dts --format cjs,esm",
+    "prepublishOnly": "npm run build",
+    "release": "npx git-ensure -a && npx bumpp --commit --tag --push",
+    "example:dev": "npm -C demo run dev",
+    "example:build": "npm -C demo run build",
+    "example:serve": "npm -C demo run serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wheatjs/vite-plugin-template.git"
+  },
+  "files": [
+    "dist",
+    "client.d.ts"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wheatjs/vite-plugin-template/issues"
+  },
+  "homepage": "https://github.com/wheatjs/vite-plugin-template#readme",
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.6.5",
+    "@types/debug": "^4.1.5",
+    "@types/jest": "^26.0.23",
+    "@types/node": "^15.3.0",
+    "eslint": "^7.26.0",
+    "jest": "^26.6.3",
+    "rollup": "^2.48.0",
+    "standard-version": "^9.3.0",
+    "ts-jest": "^26.5.6",
+    "tsup": "^4.11.0",
+    "typescript": "^4.2.4",
+    "vite": "^2.3.3"
+  }
+}
